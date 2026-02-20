@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+/* ====== EARLY 2000s RETRO THEME ====== */
+@layer base {
+  body {
+    font-family: "Comic Sans MS", "Verdana", "Trebuchet MS", cursive, sans-serif;
+    background-color: #336699;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Crect width='1' height='1'/%3E%3C/g%3E%3C/svg%3E");
+    color: #000;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ctext y='14' font-size='14'%3E👆%3C/text%3E%3C/svg%3E"), auto;
+  }
+}
+
+/* Retro link styling */
+@layer components {
+  .retro-link {
+    color: #0000ff;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  .retro-link:hover {
+    color: #ff00ff;
+  }
+  .retro-link:visited {
+    color: #800080;
+  }
+
+  /* Classic beveled button */
+  .retro-btn {
+    background: linear-gradient(180deg, #e8e8e8 0%, #c0c0c0 50%, #a0a0a0 100%);
+    border: 2px outset #d4d4d4;
+    padding: 4px 16px;
+    font-family: "Verdana", "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    text-shadow: 1px 1px 0px #fff;
+  }
+  .retro-btn:active {
+    border-style: inset;
+    background: linear-gradient(180deg, #a0a0a0 0%, #c0c0c0 50%, #e8e8e8 100%);
+  }
+  .retro-btn-primary {
+    background: linear-gradient(180deg, #6699ff 0%, #3366cc 50%, #003399 100%);
+    border: 2px outset #6699ff;
+    color: #fff;
+    text-shadow: 1px 1px 0px #003;
+  }
+  .retro-btn-primary:active {
+    border-style: inset;
+  }
+  .retro-btn-danger {
+    background: linear-gradient(180deg, #ff6666 0%, #cc3333 50%, #990000 100%);
+    border: 2px outset #ff6666;
+    color: #fff;
+    text-shadow: 1px 1px 0px #300;
+  }
+  .retro-btn-danger:active {
+    border-style: inset;
+  }
+  .retro-btn-warning {
+    background: linear-gradient(180deg, #ffcc33 0%, #cc9900 50%, #996600 100%);
+    border: 2px outset #ffcc33;
+    color: #000;
+    text-shadow: 1px 1px 0px #ffc;
+  }
+
+  /* Classic inset input */
+  .retro-input {
+    border: 2px inset #c0c0c0;
+    background: #fff;
+    padding: 3px 6px;
+    font-family: "Verdana", sans-serif;
+    font-size: 12px;
+    color: #000;
+  }
+  .retro-input:focus {
+    outline: 1px dotted #000;
+    background: #ffffcc;
+  }
+
+  /* Retro table */
+  .retro-table {
+    border: 3px ridge #8080a0;
+    border-collapse: separate;
+    border-spacing: 2px;
+    background: #c0c0c0;
+  }
+  .retro-table th {
+    background: linear-gradient(180deg, #000080 0%, #000066 100%);
+    color: #ffff00;
+    border: 2px outset #5555aa;
+    padding: 6px 10px;
+    font-family: "Verdana", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .retro-table td {
+    background: #ffffff;
+    border: 1px solid #808080;
+    padding: 5px 10px;
+    font-family: "Verdana", sans-serif;
+    font-size: 12px;
+    color: #000;
+  }
+  .retro-table tr:nth-child(even) td {
+    background: #e8e8f0;
+  }
+  .retro-table tr:hover td {
+    background: #ffffcc;
+  }
+
+  /* Retro panel / card */
+  .retro-panel {
+    background: #d4d0c8;
+    border: 2px outset #fff;
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+  }
+
+  /* Marquee-style animation */
+  .retro-marquee {
+    animation: marquee-scroll 12s linear infinite;
+  }
+  @keyframes marquee-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Blink text (the ultimate Y2K effect) */
+  .retro-blink {
+    animation: blink-text 1s step-end infinite;
+  }
+  @keyframes blink-text {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  /* Star decoration */
+  .retro-stars::before {
+    content: "★ ☆ ★ ☆ ★";
+    display: block;
+    text-align: center;
+    color: #ffcc00;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+  .retro-stars::after {
+    content: "★ ☆ ★ ☆ ★";
+    display: block;
+    text-align: center;
+    color: #ffcc00;
+    font-size: 14px;
+    letter-spacing: 4px;
+  }
+
+  /* Guestbook-style counter */
+  .retro-counter {
+    font-family: "Courier New", monospace;
+    background: #000;
+    color: #00ff00;
+    padding: 2px 8px;
+    border: 2px inset #333;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Jiggle animation for the student helper */
+@keyframes jiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  25% { transform: rotate(3deg) scale(1.02); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg) scale(0.98); }
+}
+
+.animate-jiggle {
+  animation: jiggle 0.5s ease-in-out infinite;
+}
