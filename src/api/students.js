@@ -1,4 +1,7 @@
-const API_BASE = "/api/students";
+// Use Render URL in production, local proxy in development
+const API_BASE = import.meta.env.PROD 
+  ? "https://wt-cia3.onrender.com/api/students" 
+  : "/api/students";
 
 export async function fetchStudents() {
   const res = await fetch(API_BASE);
